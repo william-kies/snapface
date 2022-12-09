@@ -7,4 +7,11 @@
         <button (click)="onClickButton()">{{ buttonText }}</button>
         <span [ngStyle]="{color: 'rgb(' + faceSnap.likes + ', 0, 0)'}">💖{{ faceSnap.likes }}</span>
     </p>
+    <small>
+        <i>
+            (Nombre d'essais: {{ 6260.58 | number: '1.0-0' }}) | 
+            (Taux de réussite: {{ 0.978 | percent: '1.0-1' }}) | 
+            (Coût total: {{ 16234412.88 | currency: 'EUR' }})
+        </i>
+    </small>
 </div>
