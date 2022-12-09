@@ -1,7 +1,21 @@
 header {
-    text-align: center;
+  text-align: center;
+  color: white;
+  background-color: rgb(24, 24, 24);
+  margin-bottom: 20px;
+  padding: 10px;
+
+  a {
+    margin: 0 10px;
     color: white;
-    background-color: rgb(24, 24, 24);
-    margin-bottom: 20px;
-    padding: 10px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .active {
+    color: lightblue;
+    text-decoration: underline;
+  }
 }

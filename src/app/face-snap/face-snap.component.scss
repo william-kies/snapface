@@ -39,13 +39,13 @@
 }
 
 .liked {
-  background-color: rgba(darkred, 0.4);
+  background-color: rgba(lightgreen, 0.4);
   color: white;
   button {
-    box-shadow: darkred 3px 3px 7px;
+    box-shadow: lightgreen 3px 3px 7px;
     color: white;
     &:active {
-      box-shadow: darkred 0 0 5px;
+      box-shadow: lightgreen 0 0 5px;
     }
   }
 }
