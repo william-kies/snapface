@@ -1,0 +1,16 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+    .app-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+}
