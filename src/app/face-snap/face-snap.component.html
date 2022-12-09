@@ -5,6 +5,6 @@
     <p>{{ faceSnap.description }}</p>
     <p>
         <button (click)="onClickButton()">{{ buttonText }}</button>
-        💖{{ faceSnap.likes }}
+        <span [ngStyle]="{color: 'rgb(' + faceSnap.likes + ', 0, 0)'}">💖{{ faceSnap.likes }}</span>
     </p>
 </div>
