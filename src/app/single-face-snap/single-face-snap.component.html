@@ -1,0 +1,17 @@
+<div class="face-like-card" [ngClass]="{ liked: userLiked === true }">
+    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.description">
+    <h2>{{ faceSnap.title | titlecase }}</h2>
+    <p><i>{{ faceSnap.createDate | date: 'dd MMMM YYYY' }}<span *ngIf="faceSnap.location"> - {{ faceSnap.location }}</span></i></p>
+    <p>{{ faceSnap.description }}</p>
+    <p>
+        <button (click)="onClickButton()">{{ buttonText }}</button>
+        <span [ngStyle]="{color: 'rgb(' + faceSnap.likes + ', 0, 0)'}">💖{{ faceSnap.likes }}</span>
+    </p>
+    <small>
+        <i>
+            (Nombre d'essais: {{ 6260.58 | number: '1.0-0' }}) | 
+            (Taux de réussite: {{ 0.978 | percent: '1.0-1' }}) | 
+            (Coût total: {{ 16234412.88 | currency: 'EUR' }})
+        </i>
+    </small>
+</div>
