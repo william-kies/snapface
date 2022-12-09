@@ -1,4 +1,4 @@
-<div class="face-like-card">
+<div class="face-like-card" [ngClass]="{ liked: userLiked === true }">
     <img [src]="faceSnap.imageUrl" [alt]="faceSnap.description">
     <h2>{{ faceSnap.title }}</h2>
     <p><i>{{ faceSnap.createDate }}<span *ngIf="faceSnap.location"> - {{ faceSnap.location }}</span></i></p>
