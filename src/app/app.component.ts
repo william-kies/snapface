@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  ngOnInit(): void { }
+  redTrainsCalled = 0;
+  yellowTrainsCalled = 0;
+
+  ngOnInit() { 
+    
+  }
 }
