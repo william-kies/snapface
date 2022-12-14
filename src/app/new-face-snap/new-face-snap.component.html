@@ -18,7 +18,7 @@
             <input type="text" name="location" id="location" placeholder="Location..." formControlName="location">
         </div>
         <div class="action-buttons">
-            <button type="submit" (click)="onSubmitForm()">Créer</button>
+            <button type="submit" (click)="onSubmitForm()" [disabled] = "snapForm.invalid">Créer</button>
         </div>
     </form>
 </div>
@@ -28,14 +28,4 @@
     <h2>{{ faceSnap.title | titlecase }}</h2>
     <p><i>{{ faceSnap.createDate | date: 'dd MMMM YYYY' }}<span *ngIf="faceSnap.location"> - {{ faceSnap.location }}</span></i></p>
     <p>{{ faceSnap.description }}</p>
-    <p>
-        <span [ngStyle]="{color: 'rgb(' + faceSnap.likes + ', 0, 0)'}">💖{{ faceSnap.likes }}</span>
-    </p>
-    <small>
-        <i>
-            (Nombre d'essais: {{ 6260.58 | number: '1.0-0' }}) | 
-            (Taux de réussite: {{ 0.978 | percent: '1.0-1' }}) | 
-            (Coût total: {{ 16234412.88 | currency: 'EUR' }})
-        </i>
-    </small>
 </div>
