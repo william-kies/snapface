@@ -20,4 +20,24 @@
       text-decoration: underline;
     }
   }
+
+  .form-content {
+    margin: 2% 20% 0 20%;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+
+      label, input {
+        margin: 0.5% 35% 0.5% 35%;
+      }
+
+      button {
+        margin: 0.5% 40% 0.5% 40%;
+      }
+    }
+  }
 }
