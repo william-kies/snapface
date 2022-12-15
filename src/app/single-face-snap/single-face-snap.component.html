@@ -4,7 +4,7 @@
     <p><i>{{ faceSnap.createDate | date: 'dd MMMM YYYY' }}<span *ngIf="faceSnap.location"> - {{ faceSnap.location }}</span></i></p>
     <p>{{ faceSnap.description }}</p>
     <p>
-        <button (click)="onLike()">{{ buttonText }}</button>
+        <button (click)="onLike(faceSnap.id)">{{ buttonText }}</button>
         <span [ngStyle]="{color: 'rgb(' + faceSnap.likes + ', 0, 0)'}">💖{{ faceSnap.likes }}</span>
     </p>
     <small>

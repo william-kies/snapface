@@ -3,6 +3,7 @@ import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-single-face-snap',
@@ -24,15 +25,21 @@ export class SingleFaceSnapComponent implements OnInit {
     this.faceSnap$ = this.FaceSnapsService.getFaceSnapById(faceSnapId);
   }
 
-  onLike() {
-    // if (this.userLiked === false) {
-    //   this.FaceSnapsService.likeFaceSnapById(this.faceSnap.id, 'like');
-    //   this.userLiked = true;
-    //   this.buttonText = 'Dislike';
-    // } else {
-    //   this.FaceSnapsService.likeFaceSnapById(this.faceSnap.id, 'dislike');
-    //   this.userLiked = false;
-    //   this.buttonText = 'Like';
-    // }
+  onLike(faceSnapId: number) {
+    if (this.userLiked === false) {
+      this.faceSnap$ = this.FaceSnapsService.likeFaceSnapById(faceSnapId, 'like').pipe(
+        tap(() => {
+          this.userLiked = true;
+          this.buttonText = 'Dislike';
+        })
+      );
+    } else {
+      this.faceSnap$ = this.FaceSnapsService.likeFaceSnapById(faceSnapId, 'dislike').pipe(
+        tap(() => {
+          this.userLiked = false;
+          this.buttonText = 'Like';
+        })
+      );
+    }
   }
 }
