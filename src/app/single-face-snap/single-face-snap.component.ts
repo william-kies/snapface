@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-single-face-snap',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./single-face-snap.component.scss']
 })
 export class SingleFaceSnapComponent implements OnInit {
-  faceSnap!: FaceSnap;
+  faceSnap$!: Observable<FaceSnap>;
   buttonText!: string;
   userLiked!: boolean;
 
@@ -20,18 +21,18 @@ export class SingleFaceSnapComponent implements OnInit {
     this.userLiked = false;
     
     const faceSnapId = +this.route.snapshot.params['id'];
-    this.faceSnap = this.FaceSnapsService.getFaceSnapById(faceSnapId);
+    this.faceSnap$ = this.FaceSnapsService.getFaceSnapById(faceSnapId);
   }
 
-  onClickButton() {
-    if (this.userLiked === false) {
-      this.FaceSnapsService.likeFaceSnapById(this.faceSnap.id, 'like');
-      this.userLiked = true;
-      this.buttonText = 'Dislike';
-    } else {
-      this.FaceSnapsService.likeFaceSnapById(this.faceSnap.id, 'dislike');
-      this.userLiked = false;
-      this.buttonText = 'Like';
-    }
+  onLike() {
+    // if (this.userLiked === false) {
+    //   this.FaceSnapsService.likeFaceSnapById(this.faceSnap.id, 'like');
+    //   this.userLiked = true;
+    //   this.buttonText = 'Dislike';
+    // } else {
+    //   this.FaceSnapsService.likeFaceSnapById(this.faceSnap.id, 'dislike');
+    //   this.userLiked = false;
+    //   this.buttonText = 'Like';
+    // }
   }
 }
