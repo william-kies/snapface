@@ -33,6 +33,6 @@ export class FaceSnapComponent implements OnInit {
   }
 
   onViewFaceSnap() {
-    this.route.navigateByUrl(`snapface/${this.faceSnap.id}`);
+    this.route.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
   }
 }

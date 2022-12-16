@@ -12,12 +12,10 @@ export class LandingPageComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 
   onContinue(): void {
-    this.router.navigateByUrl('snapface');
+    this.router.navigateByUrl('/facesnaps');
   }
 
   onSubmitForm(form: NgForm): void {
