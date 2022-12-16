@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { AuthGuard } from "../core/guards/auth.guard";
 import { FaceSnapListComponent } from "./components/face-snap-list/face-snap-list.component";
 import { NewFaceSnapComponent } from "./components/new-face-snap/new-face-snap.component";
 import { SingleFaceSnapComponent } from "./components/single-face-snap/single-face-snap.component";
@@ -9,9 +10,9 @@ import { SingleFaceSnapComponent } from "./components/single-face-snap/single-fa
  * ! perd tout le principe du Lazy Loading -
  */
 const routes: Routes = [
-    { path: 'facesnaps/create', component: NewFaceSnapComponent },
-    { path: 'facesnaps/:id', component: SingleFaceSnapComponent },
-    { path: 'facesnaps', component: FaceSnapListComponent },
+    { path: 'facesnaps/create', component: NewFaceSnapComponent, canActivate: [AuthGuard] },
+    { path: 'facesnaps/:id', component: SingleFaceSnapComponent, canActivate: [AuthGuard] },
+    { path: 'facesnaps', component: FaceSnapListComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
